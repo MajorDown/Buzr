@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { View, Text } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
 import styles from "./styles/styles";
 
@@ -12,8 +13,12 @@ export default function App() {
   if (FontError) return <Text>loading...</Text>;
   if (loadedFont)
     return (
-      <View style={styles.app}>
+      <LinearGradient 
+        colors={['#000427', '#002f26']} 
+        start={{x:0, y:0}} 
+        end={{x:1,y:1}}
+      >
         <StatusBar style="light" />
-      </View>
+      </LinearGradient>
     );
 }
