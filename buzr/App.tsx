@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
 import styles from "./styles/styles";
+import chart from "./styles/chart";
 
 export default function App() {
 
@@ -14,11 +15,13 @@ export default function App() {
   if (loadedFont)
     return (
       <LinearGradient 
-        colors={['#000427', '#002f26']} 
+        colors={[chart.colorBackGradTop, chart.colorBackGradBottom]} 
         start={{x:0, y:0}} 
         end={{x:1,y:1}}
+        style={styles.app}
       >
         <StatusBar style="light" />
+        <Text>buzr</Text>
       </LinearGradient>
     );
 }

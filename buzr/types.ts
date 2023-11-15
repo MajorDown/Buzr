@@ -8,3 +8,4 @@ export type Pad = {
     padColor: PadColor;
     padIcon: PadIcon;
 };
+
