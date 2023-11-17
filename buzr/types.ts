@@ -1,3 +1,7 @@
+export type AppPanelProps = {
+    mode: "play" | "option" | "config";
+}
+
 export type PadProps = {
     name: string | null;
     assignTo: string | null;

@@ -1,6 +1,5 @@
 const chart = {
-  colorBackGradTop: '#000427',
-  colorBackGradBottom: '#002f26',
+  appBackGradientColors: ['#000427', '#002f26'],
   colorFont: "#FFFFFF",
 };
 

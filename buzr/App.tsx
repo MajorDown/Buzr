@@ -1,9 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { View, Text } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
 import styles from "./styles/styles";
 import chart from "./styles/chart";
+import BackGradient from "./components/BackGradient";
+import AppPanel from "./components/AppPanel";
 
 export default function App() {
 
@@ -14,14 +15,10 @@ export default function App() {
   if (FontError) return <Text>loading...</Text>;
   if (loadedFont)
     return (
-      <LinearGradient 
-        colors={[chart.colorBackGradTop, chart.colorBackGradBottom]} 
-        start={{x:0, y:0}} 
-        end={{x:1,y:1}}
-        style={styles.app}
-      >
-        <StatusBar style="light" />
-        <Text>buzr</Text>
-      </LinearGradient>
+      <BackGradient colors={chart.appBackGradientColors}>
+        <StatusBar style="light" hidden />
+        <Text style={styles.text}>buzr</Text>
+        <AppPanel mode={"play"} />
+      </BackGradient>
     );
 }
