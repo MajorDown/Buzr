@@ -1,10 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 import { useFonts } from "expo-font";
-import styles from "./styles/styles";
 import chart from "./styles/chart";
 import BackGradient from "./components/BackGradient";
-import AppPanel from "./components/AppPanel";
+import AppScreen from "./components/AppScreen";
 
 export default function App() {
 
@@ -17,8 +16,7 @@ export default function App() {
     return (
       <BackGradient colors={chart.appBackGradientColors}>
         <StatusBar style="light" hidden />
-        <Text style={styles.text}>buzr</Text>
-        <AppPanel mode={"play"} />
+        <AppScreen />
       </BackGradient>
     );
 }

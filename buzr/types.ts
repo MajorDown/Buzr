@@ -1,11 +1,19 @@
+export type AppMode = "play" | "option" | "config";
+
 export type AppPanelProps = {
-    mode: "play" | "option" | "config";
+    mode: AppMode;
 }
+
+export type PadName = string | null;
+export type PadAssignment = string | null;
+export type PadColor = "none" | "red" | "orange" | "yellow" | "green" | "turkish" | "blue" | "purple" | "pink";
+export type PadIcon = "none" | "music" | "perc" | "synth" | "instrument" | "vocal";
+export type PadMode = "loop" | "sequence";
 
 export type PadProps = {
     name: string | null;
-    assignTo: string | null;
-    color: "none" | "red" | "orange" | "yellow" | "green" | "turkish" | "blue" | "purple" | "pink";
-    icon: "none" | "music" | "perc" | "synth" | "instrument" | "vocal";
-    mode: "loop" | "sequence";
-};
+    assignTo: PadAssignment;
+    color: PadColor;
+    icon: PadIcon;
+    mode: PadMode | AppMode;
+}
