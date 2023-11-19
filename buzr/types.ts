@@ -1,4 +1,4 @@
-export type AppMode = "play" | "option" | "config";
+export type AppMode = "play" | "options" | "config";
 
 export type AppPanelProps = {
     mode: AppMode;
@@ -15,5 +15,5 @@ export type PadProps = {
     assignTo: PadAssignment;
     color: PadColor;
     icon: PadIcon;
-    mode: PadMode | AppMode;
+    mode: PadMode | null;
 }

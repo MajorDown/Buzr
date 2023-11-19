@@ -23,6 +23,26 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     alignItems: "center"
+  },
+  menuSelector: {
+    width: "100%",
+    height: "25%",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  pad: {
+    width: 75,
+    height: 75,
+  },
+  padContainer: {
+    width: "100%",
+    height: "100%"    
+  },
+  padContent: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 
