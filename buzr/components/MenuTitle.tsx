@@ -3,7 +3,7 @@ import styles from "../styles/styles";
 
 const MenuTitle = () => {
     return (
-        <View>
+        <View style={styles.MenuTitle}>
             <Text style={styles.text}>MenuTitle</Text>
         </View>
     )

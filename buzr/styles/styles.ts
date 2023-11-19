@@ -24,11 +24,20 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center"
   },
+  MenuTitle: {
+    width:"100%",
+    height: "50%",
+    alignItems: "center"
+  },
   menuSelector: {
     width: "100%",
     height: "25%",
     justifyContent: "center",
     alignItems: "center"
+  },
+  MenuSelectorPadIcon: {
+    width: "75%",
+    height: "75%",
   },
   pad: {
     width: 75,
@@ -36,14 +45,10 @@ const styles = StyleSheet.create({
   },
   padContainer: {
     width: "100%",
-    height: "100%"    
-  },
-  padContent: {
-    width: "100%",
-    height: "100%",
+    height: "100%",  
     justifyContent: "center",
     alignItems: "center"
-  }
+  },
 });
 
 export default styles;
