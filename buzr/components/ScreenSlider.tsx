@@ -1,36 +1,56 @@
-import {useState, useEffect, PropsWithChildren} from "react";
-import {View, DimensionValue} from "react-native";
+import React, { useEffect, useRef, PropsWithChildren } from "react";
+import { Animated, Easing } from "react-native";
 import styles from "../styles/styles";
 import { AppScreen } from "../types";
 
 type ScreenSliderProps = PropsWithChildren<{
-  selectedScreen: AppScreen
-}>
+  selectedScreen: AppScreen;
+}>;
 
-const ScreenSlider = (props: ScreenSliderProps) => {
-    const [slide, setSlide] = useState<DimensionValue>();
+const ScreenSlider: React.FC<ScreenSliderProps> = (props) => {
+  const slideAnimation = useRef(new Animated.Value(0)).current;
 
-    useEffect(() => {
-        switch (props.selectedScreen) {
-            case "play":
-              setSlide("0%");
-              break;
-            case "options":
-              setSlide("-100%");
-              break;
-            case "config":
-              setSlide("-200%");
-              break;
-            default:
-              setSlide("0%");
-        }
-    }, [props.selectedScreen])
+  useEffect(() => {
+    let toValue;
+    switch (props.selectedScreen) {
+      case "play":
+        toValue = 0;
+        break;
+      case "options":
+        toValue = 100;
+        break;
+      case "config":
+        toValue = 200;
+        break;
+      default:
+        toValue = 0;
+    }
 
-    return (
-        <View style={[styles.screenSlider, {left: slide}]}>
-            {props.children}
-        </View>
-    )
-}
+    Animated.timing(slideAnimation, {
+      toValue,
+      duration: 300,
+      easing: Easing.ease,
+      useNativeDriver: false,
+    }).start();
+  }, [props.selectedScreen]);
+
+  return (
+    <Animated.View
+  style={[
+    styles.screenSlider,
+    {
+      left: slideAnimation.interpolate({
+        inputRange: [0, 100, 200],
+        outputRange: ["0%", "-100%", "-200%"],
+      }),
+    },
+  ]}
+>
+  {props.children}
+</Animated.View>
+  );
+};
 
 export default ScreenSlider;
+
+

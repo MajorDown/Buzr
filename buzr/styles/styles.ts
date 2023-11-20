@@ -26,6 +26,12 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
   },
+  playScreen: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly",
+    marginVertical: "10%"
+  },
   appMenu: {
     width: "25%",
     height: "100%",
