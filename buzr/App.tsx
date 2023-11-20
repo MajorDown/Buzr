@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import { useFonts } from "expo-font";
 import chart from "./styles/chart";
 import BackGradient from "./components/BackGradient";
-import AppScreen from "./components/AppScreen";
+import AppView from "./components/AppView";
 import { ScreenProvider } from "./contexts/ScreenContext";
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
       <BackGradient colors={chart.appBackGradientColors}>
         <StatusBar style="light" hidden />
         <ScreenProvider>
-          <AppScreen />
+          <AppView />
         </ScreenProvider>
       </BackGradient>
     );

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   text: {
     color: chart.colorFont
   },
-  appScreen: {
+  app: {
     width: "100%",
     height: "100%",
     flexDirection: "row",
@@ -13,6 +13,17 @@ const styles = StyleSheet.create({
   },
   appPanel: {
     width: "75%",
+    height: "100%",
+    overflow: "hidden"
+  },
+  screenSlider: {
+    width: "100%",
+    height: "50%",
+    flexDirection: "row",
+    position: "absolute",
+  },
+  screen: {
+    width: "100%",
     height: "100%",
   },
   appMenu: {
@@ -40,15 +51,26 @@ const styles = StyleSheet.create({
     height: "75%",
   },
   pad: {
+    margin: "2%",
     width: 75,
     height: 75,
-  },
-  padContainer: {
-    width: "100%",
-    height: "100%",  
     justifyContent: "center",
     alignItems: "center"
   },
+  padBackground: {
+    width: "100%",
+    height: "100%",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    overflow: "hidden"
+  },
+  padIcon: {
+    width: 32,
+    height: 32,    
+  },
+  padText: {
+    color: "white"
+  }
 });
 
 export default styles;

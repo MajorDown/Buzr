@@ -1,10 +1,10 @@
 import {View, Pressable, ImageBackground, Image} from "react-native";
 import styles from "../styles/styles";
 import { useScreenContext } from "../contexts/ScreenContext";
-import { AppScreen, ScreenContextType } from "../types";
+import { AppScreenContext } from "../types";
 
 const MenuSelector = () => {
-    const {screen, updateScreen}:ScreenContextType = useScreenContext();
+    const {screen, updateScreen}:AppScreenContext = useScreenContext();
 
     const handlePress = () => {
         if (screen === "play") updateScreen("options");
@@ -17,7 +17,7 @@ const MenuSelector = () => {
                 <ImageBackground 
                     source={(require("../assets/images/pads/pad_white.png"))} 
                     resizeMode="cover" 
-                    style= {styles.padContainer}
+                    style= {styles.padBackground}
                 >
                     <Image source={require("../assets/images/options.png")} 
                         alt="options" 

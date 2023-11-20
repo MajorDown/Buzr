@@ -1,8 +1,8 @@
 export type AppScreen = "play" | "options" | "config";
-export type ScreenContextType = {
+export type AppScreenContext = {
     screen: AppScreen;
     updateScreen: (newScreen: AppScreen) => void;
-  };
+};
 
 export type PadName = string | null;
 export type PadAssignment = string | null;

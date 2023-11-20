@@ -6,12 +6,13 @@
  * @returns {React.ReactElement} Le composant
  */
 
+import { PropsWithChildren } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 
-type BackGradientProps = {
-  children: any;
-  colors: string[];
-}
+
+type BackGradientProps= PropsWithChildren<{
+  colors: string[]
+}>
 
 const BackGradient = (props: BackGradientProps) => {
     return (

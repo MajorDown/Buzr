@@ -1,11 +1,11 @@
 import {View, Text} from "react-native";
 import styles from "../styles/styles";
-import { useScreenContext } from "../contexts/ScreenContext";
 import { useEffect, useState } from "react";
-import { ScreenContextType } from "../types";
+import { useScreenContext } from "../contexts/ScreenContext";
+import { AppScreenContext } from "../types";
 
 const MenuTitle = () => {
-    const {screen, updateScreen}:ScreenContextType = useScreenContext();
+    const {screen, updateScreen}:AppScreenContext = useScreenContext();
     const [title, setTitle] = useState<string>("Let's play!");
 
     useEffect(() => {

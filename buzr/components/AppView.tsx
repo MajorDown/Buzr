@@ -3,13 +3,13 @@ import styles from "../styles/styles";
 import AppPanel from "./AppPanel";
 import AppMenu from "./AppMenu";
 
-const AppScreen = () => {
+const AppView = () => {
   return (
-    <View style={styles.appScreen}>
+    <View style={styles.app}>
       <AppPanel />
       <AppMenu />
     </View>
   )
 }
 
-export default AppScreen;
+export default AppView;
