@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import chart from "./styles/chart";
 import BackGradient from "./components/BackGradient";
 import AppScreen from "./components/AppScreen";
+import { ScreenProvider } from "./contexts/ScreenContext";
 
 export default function App() {
 
@@ -16,7 +17,9 @@ export default function App() {
     return (
       <BackGradient colors={chart.appBackGradientColors}>
         <StatusBar style="light" hidden />
-        <AppScreen />
+        <ScreenProvider>
+          <AppScreen />
+        </ScreenProvider>
       </BackGradient>
     );
 }

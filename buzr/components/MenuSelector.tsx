@@ -1,9 +1,14 @@
-import {View, Pressable, ImageBackground, Text, Image} from "react-native";
+import {View, Pressable, ImageBackground, Image} from "react-native";
 import styles from "../styles/styles";
+import { useScreenContext } from "../contexts/ScreenContext";
+import { AppScreen, ScreenContextType } from "../types";
 
 const MenuSelector = () => {
+    const {screen, updateScreen}:ScreenContextType = useScreenContext();
+
     const handlePress = () => {
-        console.log("click !");
+        if (screen === "play") updateScreen("options");
+        if (screen === "options") updateScreen("play");
     }
 
     return (
@@ -14,10 +19,10 @@ const MenuSelector = () => {
                     resizeMode="cover" 
                     style= {styles.padContainer}
                 >
-                        <Image source={require("../assets/images/options.png")} 
-                            alt="options" 
-                            style={styles.MenuSelectorPadIcon}
-                        />
+                    <Image source={require("../assets/images/options.png")} 
+                        alt="options" 
+                        style={styles.MenuSelectorPadIcon}
+                    />
                 </ImageBackground>
             </Pressable>
         </View>
