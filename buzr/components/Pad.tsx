@@ -1,25 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Pressable, ImageBackground, Image, Text } from "react-native";
 import { PadProps } from "../types";
 import styles from "../styles/styles";
-import PadSearcher from "./PadSearcher";
+import padFinder from "../tools/padFinder";
+import iconFinder from "../tools/iconFinder";
 
 const Pad = (props: PadProps) => {
-    const {name, assignTo, color, icon, mode} = props;
-    const [isActive, setIsactive] = useState<boolean>(false);
+    const [isActive, setIsActive] = useState<boolean>(false);
+    const notActivePad = padFinder(props.color, false);
+    const activePad = padFinder(props.color, true);
+    const icon = iconFinder(props.icon);
+
+    const handlePress = () => {
+      if (isActive === false) {
+        setIsActive(true);
+        setTimeout(() => setIsActive(false), 500);
+      } else if (isActive === true) {
+        setIsActive(false);
+      }
+    }
 
     return (
-      <Pressable style={styles.pad}>
+      <Pressable style={styles.pad} onPress={() => handlePress()}>
         <ImageBackground 
-          source={PadSearcher({color, isActive})} 
+          source={isActive ? activePad : notActivePad} 
           resizeMode="cover" 
           style= {styles.padBackground}
         >
-          {icon != "none" && <Image source={require(`../assets/images/padIcons/instrument.png`)} 
+          {props.icon != "none" && <Image 
+            source={icon} 
             alt="options" 
             style={styles.padIcon}
           />}
-          <Text style={styles.padText}>{name}</Text>
+          <Text style={styles.padText}>{props.name}</Text>
         </ImageBackground>        
       </Pressable>
     )

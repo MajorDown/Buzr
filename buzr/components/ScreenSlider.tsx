@@ -17,10 +17,10 @@ const ScreenSlider: React.FC<ScreenSliderProps> = (props) => {
         toValue = 0;
         break;
       case "options":
-        toValue = 100;
+        toValue = 1;
         break;
       case "config":
-        toValue = 200;
+        toValue = 2;
         break;
       default:
         toValue = 0;
@@ -40,7 +40,7 @@ const ScreenSlider: React.FC<ScreenSliderProps> = (props) => {
     styles.screenSlider,
     {
       left: slideAnimation.interpolate({
-        inputRange: [0, 100, 200],
+        inputRange: [0, 1, 2],
         outputRange: ["0%", "-100%", "-200%"],
       }),
     },

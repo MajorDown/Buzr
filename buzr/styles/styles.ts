@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   },
   screenSlider: {
     width: "100%",
-    height: "50%",
+    height: "100%",
     flexDirection: "row",
     position: "absolute",
   },
@@ -27,10 +27,12 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   playScreen: {
+    justifyContent: "space-around",
+    padding: "5%"
+  },
+  playScreenRow: {
     flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-evenly",
-    marginVertical: "10%"
+    justifyContent: "space-between"
   },
   appMenu: {
     width: "25%",
@@ -57,7 +59,6 @@ const styles = StyleSheet.create({
     height: "75%",
   },
   pad: {
-    margin: "2%",
     width: 75,
     height: 75,
     justifyContent: "center",

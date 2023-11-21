@@ -16,3 +16,24 @@ export type PadProps = {
     icon: PadIcon;
     mode: PadMode | null;
 }
+
+export type PadsContext = {
+    pads : {
+        pad1 : PadProps;
+        pad2 : PadProps;
+        pad3 : PadProps;
+        pad4 : PadProps;
+        pad5 : PadProps;
+        pad6 : PadProps;
+        pad7 : PadProps;
+        pad8 : PadProps;
+        pad9 : PadProps;
+        pad10 : PadProps;
+        pad11 : PadProps;
+        pad12 : PadProps;
+        pad13 : PadProps;
+        pad14 : PadProps;
+        pad15 : PadProps;
+    };
+    updatePads: (newPads: any) => void;
+}
