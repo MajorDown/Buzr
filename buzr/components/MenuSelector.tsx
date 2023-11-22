@@ -15,7 +15,6 @@ const MenuSelector = () => {
     const notActivePad = padFinder("none", false);
     const activePad = padFinder("none", true);
 
-
     useEffect(() => {
         switch (screen) {
             case "play":
@@ -36,6 +35,7 @@ const MenuSelector = () => {
         setIsPressed(true);
         if (screen === "play") updateScreen("options");
         if (screen === "options") updateScreen("play");
+        if (screen === "config") updateScreen("options");
         setTimeout(() => setIsPressed(false), 500)
     }
 

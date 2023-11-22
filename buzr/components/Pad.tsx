@@ -29,7 +29,7 @@ const Pad = (props: PadProps) => {
         >
           {props.icon != "none" && <Image 
             source={icon} 
-            alt="options" 
+            alt="pad" 
             style={styles.padIcon}
           />}
           <Text style={styles.padText}>{props.name}</Text>

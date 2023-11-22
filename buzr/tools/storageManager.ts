@@ -8,8 +8,8 @@ class StorageManager {
     try {
       await AsyncStorage.setItem(cle, JSON.stringify(donnees));
       return {status: "success"};
-    } catch (erreur) {
-      console.error('StorageManager ~> Erreur :', erreur);
+    } catch (error) {
+      console.error('StorageManager.save ~> Erreur :', error);
       return {status: "failed"};
     }
   }
@@ -20,15 +20,13 @@ class StorageManager {
       const dataJSON = await AsyncStorage.getItem(cle) as string | null;
       if (dataJSON !== null) {
         const data = JSON.parse(dataJSON) as T;
-        console.log('Données récupérées avec succès:', data);
         return {data: data, status: "success"};
       }
       else {
         return {data: null, status: "empty"};
       }
-    }
-    catch (error) {
-      console.log('Erreur lors de la récupération des données:', error);
+    } catch (error) {
+      console.log('StorageManager.load ~> Erreur :', error);
       return {data: null, status: "failed"};
     }
   }

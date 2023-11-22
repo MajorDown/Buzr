@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   },
   screen: {
     width: "100%",
-    height: "100%",
+    height: "100%"
   },
   playScreen: {
     justifyContent: "space-around",
@@ -33,6 +33,33 @@ const styles = StyleSheet.create({
   playScreenRow: {
     flexDirection: "row",
     justifyContent: "space-between"
+  },
+  optionsScreen: {
+    justifyContent: "space-around",
+    padding: "2%"
+  },
+  optionsScreenRow: {
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "center"
+  },
+  optionsPad: {
+    alignItems: "center",
+    borderRadius: 5,
+    padding: 5
+  },
+  optionsPadIsPressed : {
+    alignItems: "center",
+    borderRadius: 5,
+    padding: 5,
+    backgroundColor: "#777777"
+  },
+  optionsPadTitle: {
+    flexDirection: "row",
+    alignItems: "center"
+  },
+  optionsPadText: {
+    color: "#ffffff"
   },
   appMenu: {
     width: "25%",

@@ -36,18 +36,17 @@ const ScreenSlider: React.FC<ScreenSliderProps> = (props) => {
 
   return (
     <Animated.View
-  style={[
-    styles.screenSlider,
-    {
-      left: slideAnimation.interpolate({
-        inputRange: [0, 1, 2],
-        outputRange: ["0%", "-100%", "-200%"],
-      }),
-    },
-  ]}
->
-  {props.children}
-</Animated.View>
+      style={[
+        styles.screenSlider,{
+          left: slideAnimation.interpolate({
+            inputRange: [0, 1, 2],
+            outputRange: ["0%", "-100%", "-200%"],
+          }),
+        },
+      ]}
+    >
+      {props.children}
+    </Animated.View>
   );
 };
 
