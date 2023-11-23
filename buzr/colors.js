@@ -1,0 +1,9 @@
+const pinkGradient = ["#FF0099", "#000000", "#874569"];
+const redGradient = ["#FF0000", "#000000", "#874545"];
+const orangeGradient = ["#FF5C00", "#000000", "#875D45"];
+const yellowGradient = ["#C0D003", "#000000", "#868745"];
+const greenGradient = ["#21ED00", "#000000", "#45874C"];
+const turkishGradient = ["#00EADC", "#000000", "#458783"];
+const blueGradient = ["#0038FF", "#000000", "#455F87"];
+const purpleGradient = ["#9E00FF", "#000000", "#7E4587"];
+const whiteGradient = ["#FFFFFF", "#959595", "#8D8D8D"];

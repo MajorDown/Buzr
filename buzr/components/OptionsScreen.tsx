@@ -1,18 +1,17 @@
-import {Text, View, StyleProp, ViewStyle} from "react-native";
+import {memo} from "react";
+import {View, StyleProp, ViewStyle} from "react-native";
 import styles from "../styles/styles";
 import PadOptions from "./PadOptions";
 import {PadId} from "../types";
-import { useScreenContext } from "../contexts/ScreenContext";
 
 type OptionsScreenProps = {
     style?: StyleProp<ViewStyle>;
 }
 
 const OptionsScreen = (props: OptionsScreenProps) => {
-    const {screen, updateScreen} = useScreenContext();
+
     const goToConfig = (id: PadId) => {
         console.log(id);
-        updateScreen("config");
     }
 
     return (
@@ -42,4 +41,4 @@ const OptionsScreen = (props: OptionsScreenProps) => {
     )
 }
 
-export default OptionsScreen;
+export default memo(OptionsScreen);

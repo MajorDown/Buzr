@@ -1,4 +1,5 @@
-import {View, Text, StyleProp, ViewStyle} from "react-native";
+import {memo} from "react";
+import {View, StyleProp, ViewStyle} from "react-native";
 import styles from "../styles/styles";
 import Pad from "./Pad";
 
@@ -34,4 +35,4 @@ const PlayScreen = (props: PlayScreenProps) => {
     )
 }
 
-export default PlayScreen;
+export default memo(PlayScreen);

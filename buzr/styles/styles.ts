@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     position: "absolute",
   },
+  screenManager: {
+    width: "100%",
+    height: "100%",
+    position: "absolute",
+  },
   screen: {
     width: "100%",
     height: "100%"
@@ -89,14 +94,16 @@ const styles = StyleSheet.create({
     width: 75,
     height: 75,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    borderRadius: 10,
+    borderWidth: 2,
+    overflow: "hidden"
   },
-  padBackground: {
+  padGradient: {
     width: "100%",
     height: "100%",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
     alignItems: "center",
-    overflow: "hidden"
   },
   padIcon: {
     width: 32,

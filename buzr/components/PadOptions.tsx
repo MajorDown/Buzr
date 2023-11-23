@@ -1,9 +1,9 @@
 import {useState} from "react";
-import { Pressable, Image, ImageBackground, Text } from "react-native";
+import { Pressable, Image, Text } from "react-native";
 import styles from "../styles/styles";
 import { PadProps, PadId } from "../types";
-import padFinder from "../tools/padFinder";
 import iconFinder from "../tools/iconFinder";
+import PadGradient from "./PadGradient";
 
 type PadOptionsProps = PadProps & {
     onPress: (id: PadId) => void;
@@ -11,6 +11,7 @@ type PadOptionsProps = PadProps & {
 
 const PadOptions = (props: PadOptionsProps) => {
     const [isPressed, setIsPressed] = useState<boolean>(false);
+    const padIcon = iconFinder(props.icon)
 
     const handlePress = (id: PadId) => {
         setIsPressed(true);
@@ -20,17 +21,13 @@ const PadOptions = (props: PadOptionsProps) => {
 
     return (
         <Pressable style={isPressed ? styles.optionsPadIsPressed : styles.optionsPad} onPress={() => handlePress(1)}>
-            <ImageBackground
-              source={padFinder(props.color, false)} 
-              alt="color"                   
-              style={{width: 30, height: 30, justifyContent: "center", alignItems: "center"}}
-            >
+            <PadGradient color={props.color}>
                 <Image
-                  source={iconFinder(props.icon)} 
+                  source={padIcon} 
                   alt="icon" 
                   style={{width: 20, height: 20}}
                 />
-            </ImageBackground>
+            </PadGradient>
             <Text style={styles.optionsPadText}>{props.name}</Text>
             <Text style={[styles.optionsPadText, {fontSize: 10}]}>{props.assignTo}</Text>
             <Text style={[styles.optionsPadText, {fontSize: 10}]}>mode {props.mode}</Text>
