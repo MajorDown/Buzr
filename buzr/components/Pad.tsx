@@ -4,6 +4,7 @@ import { PadProps } from "../types";
 import styles from "../styles/styles";
 import iconFinder from "../tools/iconFinder";
 import PadGradient from "./PadGradient";
+import Icon from "./Icon";
 
 const Pad = (props: PadProps) => {
     const [isActive, setIsActive] = useState<boolean>(false);
@@ -54,11 +55,7 @@ const Pad = (props: PadProps) => {
     return (
       <Pressable style={[styles.pad, {borderColor: isActive ? "#FFFFFF" : borderColor}]} onPress={() => handlePress()}>
         <PadGradient color={props.color}>
-          {props.icon != "none" && <Image 
-            source={icon} 
-            alt="pad" 
-            style={styles.padIcon}
-          />}
+          {props.icon != "none" && <Icon icon={props.icon} size={32}/>}
           <Text style={styles.padText}>{props.name}</Text>
         </PadGradient>        
       </Pressable>

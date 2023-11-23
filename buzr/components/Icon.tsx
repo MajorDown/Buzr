@@ -8,12 +8,12 @@ const synth = require("../assets/images/padIcons/synth.png");
 const instrument = require("../assets/images/padIcons/instrument.png");
 const vocal = require("../assets/images/padIcons/vocal.png");
 
-type PadIconProps = {
+type IconProps = {
     icon: PadIcon;
     size: number,
 }
 
-const PadIcon = (props: PadIconProps) => {
+const Icon = (props: IconProps) => {
     const [icon, setIcon] = useState<ImageURISource>(none);
 
     useEffect(() => {
@@ -43,9 +43,9 @@ const PadIcon = (props: PadIconProps) => {
         <Image 
         source={icon}
         alt={props.icon} 
-        style={{}}
+        style={{width: props.size, height: props.size}}
         />
     )
 }
 
-export default PadIcon;
+export default Icon;
