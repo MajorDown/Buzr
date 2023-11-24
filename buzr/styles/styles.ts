@@ -48,17 +48,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
     alignItems: "center"
   },
-  optionsPad: {
-    alignItems: "center",
-    borderRadius: 5,
-    padding: 5
-  },
-  optionsPadIsPressed : {
-    alignItems: "center",
-    borderRadius: 5,
-    padding: 5,
-    backgroundColor: "#777777"
-  },
   optionsPadTitle: {
     flexDirection: "row",
     alignItems: "center"

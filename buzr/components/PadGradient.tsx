@@ -49,6 +49,7 @@ const PadGradient = (props: PadGradientProps) => {
             break;
         }
       }, [props.color])
+      
     return (
         <LinearGradient
           colors={gradientColors}

@@ -20,17 +20,17 @@ const PadOptions = (props: PadOptionsProps) => {
     }
 
     return (
-        <Pressable style={isPressed ? styles.optionsPadIsPressed : styles.optionsPad} onPress={() => handlePress(1)}>
+        <Pressable style={[styles.pad, {borderColor: isPressed ? "#FFFFFF" : props.color}]} onPress={() => handlePress(1)}>
             <PadGradient color={props.color}>
                 <Image
                   source={padIcon} 
                   alt="icon" 
                   style={{width: 20, height: 20}}
                 />
+                <Text style={styles.optionsPadText}>{props.name}</Text>
+                <Text style={[styles.optionsPadText, {fontSize: 10}]}>{props.assignTo}</Text>
+                <Text style={[styles.optionsPadText, {fontSize: 10}]}>mode {props.mode}</Text>
             </PadGradient>
-            <Text style={styles.optionsPadText}>{props.name}</Text>
-            <Text style={[styles.optionsPadText, {fontSize: 10}]}>{props.assignTo}</Text>
-            <Text style={[styles.optionsPadText, {fontSize: 10}]}>mode {props.mode}</Text>
         </Pressable>
     )
 }

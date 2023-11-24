@@ -9,7 +9,6 @@ import Icon from "./Icon";
 const Pad = (props: PadProps) => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [borderColor, setBorderColor] = useState<string>("#8D8D8D");
-    const icon = iconFinder(props.icon);
 
     useEffect(() => {
       switch (props.color) {
