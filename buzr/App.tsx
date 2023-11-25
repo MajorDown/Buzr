@@ -5,6 +5,7 @@ import chart from "./styles/chart";
 import BackGradient from "./components/BackGradient";
 import AppView from "./components/AppView";
 import { ScreenProvider } from "./contexts/ScreenContext";
+import { PadsProvider } from "./contexts/PadsContext";
 
 export default function App() {
 
@@ -17,9 +18,11 @@ export default function App() {
     return (
       <BackGradient colors={chart.appBackGradientColors}>
         <StatusBar style="light" hidden />
-        <ScreenProvider>
-          <AppView />
-        </ScreenProvider>
+        <PadsProvider>
+          <ScreenProvider>
+            <AppView />
+          </ScreenProvider>
+        </PadsProvider>
       </BackGradient>
     );
 }

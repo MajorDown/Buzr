@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, PropsWithChildren } from "react";
+import { useEffect, useRef, PropsWithChildren } from "react";
 import { Animated, Easing } from "react-native";
 import styles from "../styles/styles";
 import { AppScreen } from "../types";
@@ -7,7 +7,7 @@ type ScreenSliderProps = PropsWithChildren<{
   selectedScreen: AppScreen;
 }>;
 
-const ScreenSlider: React.FC<ScreenSliderProps> = (props) => {
+const ScreenSlider = (props: ScreenSliderProps) => {
   const slideAnimation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {

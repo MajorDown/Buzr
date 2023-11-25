@@ -1,17 +1,18 @@
-import { useState, useEffect} from "react";
-import { Pressable, Image, Text } from "react-native";
+import { useState, useEffect, memo} from "react";
+import { Pressable, Text } from "react-native";
 import { PadProps } from "../types";
 import styles from "../styles/styles";
-import iconFinder from "../tools/iconFinder";
 import PadGradient from "./PadGradient";
 import Icon from "./Icon";
 
-const Pad = (props: PadProps) => {
+type PadData = { data: PadProps}
+
+const Pad = (props: PadData) => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [borderColor, setBorderColor] = useState<string>("#8D8D8D");
 
     useEffect(() => {
-      switch (props.color) {
+      switch (props.data.color) {
         case "pink" :
           setBorderColor("#874569");
           break;
@@ -40,7 +41,7 @@ const Pad = (props: PadProps) => {
           setBorderColor("#8D8D8D");
           break;
       }
-    }, [props.color])
+    }, [props.data.color])
 
     const handlePress = () => {
       if (isActive === false) {
@@ -52,13 +53,13 @@ const Pad = (props: PadProps) => {
     }
 
     return (
-      <Pressable style={[styles.pad, {borderColor: isActive ? "#FFFFFF" : borderColor}]} onPress={() => handlePress()}>
-        <PadGradient color={props.color}>
-          {props.icon != "none" && <Icon icon={props.icon} size={32}/>}
-          <Text style={styles.padText}>{props.name}</Text>
+      <Pressable style={[styles.pad, {borderColor: isActive ? "white" : borderColor}]} onPress={() => handlePress()}>
+        <PadGradient color={props.data.color}>
+          {props.data.icon != "none" && <Icon icon={props.data.icon} size={32}/>}
+          <Text style={{color: props.data.color === "none" ? "black" : "white"}}>{props.data.name}</Text>
         </PadGradient>        
       </Pressable>
     )
 };
 
-export default Pad;
+export default memo(Pad);

@@ -1,41 +1,46 @@
 import {memo} from "react";
 import {View, StyleProp, ViewStyle} from "react-native";
 import styles from "../styles/styles";
-import PadOptions from "./PadOptions";
-import {PadId} from "../types";
+import OptionsPad from "./OptionsPad";
+import { PadId } from "../types";
+import { usePadsContext } from "../contexts/PadsContext";
+import { useScreenContext } from "../contexts/ScreenContext";
+
 
 type OptionsScreenProps = {
     style?: StyleProp<ViewStyle>;
 }
 
 const OptionsScreen = (props: OptionsScreenProps) => {
+    const {pads, updatePads} = usePadsContext();
+    const {screen, updateScreen} = useScreenContext();
 
     const goToConfig = (id: PadId) => {
-        console.log(id);
+        console.log("gotoconfig");
     }
 
     return (
         <View style={[styles.screen, styles.optionsScreen, props.style]}>
             <View style={styles.optionsScreenRow}>
-                <PadOptions id={1} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(1)}/>
-                <PadOptions id={2} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(2)}/>
-                <PadOptions id={3} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(3)}/>
-                <PadOptions id={4} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(4)}/>
-                <PadOptions id={5} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(5)}/>
+                <OptionsPad data={pads.pad1} onPress={() => goToConfig(pads.pad1.id)}/>
+                <OptionsPad data={pads.pad2} onPress={() => goToConfig(pads.pad2.id)}/>
+                <OptionsPad data={pads.pad3} onPress={() => goToConfig(pads.pad3.id)}/>
+                <OptionsPad data={pads.pad4} onPress={() => goToConfig(pads.pad4.id)}/>
+                <OptionsPad data={pads.pad5} onPress={() => goToConfig(pads.pad5.id)}/>
             </View>
             <View style={styles.optionsScreenRow}>
-                <PadOptions id={6} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(6)}/>
-                <PadOptions id={7} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(7)}/>
-                <PadOptions id={8} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(8)}/>
-                <PadOptions id={9} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(9)}/>
-                <PadOptions id={10} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(10)}/>
+                <OptionsPad data={pads.pad6} onPress={() => goToConfig(pads.pad6.id)}/>
+                <OptionsPad data={pads.pad7} onPress={() => goToConfig(pads.pad7.id)}/>
+                <OptionsPad data={pads.pad8} onPress={() => goToConfig(pads.pad8.id)}/>
+                <OptionsPad data={pads.pad9} onPress={() => goToConfig(pads.pad9.id)}/>
+                <OptionsPad data={pads.pad10} onPress={() => goToConfig(pads.pad10.id)}/>
             </View>
             <View style={styles.optionsScreenRow}>
-                <PadOptions id={11} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(11)}/>
-                <PadOptions id={12} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(12)}/>
-                <PadOptions id={13} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(13)}/>
-                <PadOptions id={14} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(14)}/>
-                <PadOptions id={15} name={"kikou"} assignTo={"folder/slide"} color={"blue"} icon={"instrument"} mode={"loop"} onPress={() => goToConfig(15)}/>
+                <OptionsPad data={pads.pad11} onPress={() => goToConfig(pads.pad11.id)}/>
+                <OptionsPad data={pads.pad12} onPress={() => goToConfig(pads.pad12.id)}/>
+                <OptionsPad data={pads.pad13} onPress={() => goToConfig(pads.pad13.id)}/>
+                <OptionsPad data={pads.pad14} onPress={() => goToConfig(pads.pad14.id)}/>
+                <OptionsPad data={pads.pad15} onPress={() => goToConfig(pads.pad15.id)}/>
             </View>
         </View>
     )

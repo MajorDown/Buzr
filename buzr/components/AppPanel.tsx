@@ -4,9 +4,8 @@ import PlayScreen from './PlayScreen';
 import OptionsScreen from './OptionsScreen';
 import ConfigScreen from './ConfigScreen';
 import { useScreenContext } from "../contexts/ScreenContext";
-import { AppScreenContext, AppScreen } from "../types";
+import { AppScreenContext } from "../types";
 import ScreenSlider from './ScreenSlider';
-import ScreenManager from './ScreenManager';
 
 const AppPanel = () => {
   const { screen , updateScreen} : AppScreenContext = useScreenContext();

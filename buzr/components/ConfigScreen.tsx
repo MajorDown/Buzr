@@ -1,4 +1,4 @@
-import React from "react";
+import {memo} from "react";
 import { View, Text, StyleProp, ViewStyle } from "react-native";
 import styles from "../styles/styles";
 
@@ -14,4 +14,4 @@ const ConfigScreen = (props: ConfigScreenProps) => {
   );
 };
 
-export default ConfigScreen;
+export default memo(ConfigScreen);

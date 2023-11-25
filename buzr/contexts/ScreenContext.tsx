@@ -1,7 +1,7 @@
-import React, { createContext, useContext, useState, PropsWithChildren } from "react";
+import { createContext, useContext, useState, PropsWithChildren } from "react";
 import { AppScreen, AppScreenContext } from "../types";
 
-const ScreenContext = createContext<AppScreenContext>({} as AppScreenContext);
+const ScreenContext = createContext({} as AppScreenContext);
 
 export function useScreenContext() {
   const context = useContext(ScreenContext);

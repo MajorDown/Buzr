@@ -52,9 +52,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center"
   },
-  optionsPadText: {
-    color: "#ffffff"
-  },
   appMenu: {
     width: "25%",
     height: "100%",
@@ -93,13 +90,6 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
-  },
-  padIcon: {
-    width: 32,
-    height: 32,    
-  },
-  padText: {
-    color: "white"
   }
 });
 
