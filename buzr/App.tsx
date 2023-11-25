@@ -1,3 +1,4 @@
+import {useEffect} from "react";
 import { StatusBar } from "expo-status-bar";
 import { Text } from "react-native";
 import { useFonts } from "expo-font";
@@ -5,9 +6,9 @@ import chart from "./styles/chart";
 import BackGradient from "./components/BackGradient";
 import AppView from "./components/AppView";
 import { ScreenProvider } from "./contexts/ScreenContext";
-import { PadsProvider } from "./contexts/PadsContext";
 
 export default function App() {
+  useEffect(() => console.log("création de App"), [])
 
   const [loadedFont, FontError] = useFonts({
     "Orbitron-Bold": require("./assets/fonts/Orbitron-Bold.ttf"),
@@ -18,11 +19,7 @@ export default function App() {
     return (
       <BackGradient colors={chart.appBackGradientColors}>
         <StatusBar style="light" hidden />
-        <PadsProvider>
-          <ScreenProvider>
             <AppView />
-          </ScreenProvider>
-        </PadsProvider>
       </BackGradient>
     );
 }

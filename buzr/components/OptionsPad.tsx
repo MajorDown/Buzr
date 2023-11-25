@@ -7,21 +7,25 @@ import PadGradient from "./PadGradient";
 
 type OptionsPadProps = {
     data: PadProps;
-    onPress: (id: PadId) => void;
+    onPress: (id: PadId) => void
 };
 
 const OptionsPad = (props: OptionsPadProps) => {
     const [isPressed, setIsPressed] = useState<boolean>(false);
-    const padIcon = iconFinder(props.data.icon)
+    const padIcon = iconFinder(props.data.icon);
 
-    const handlePress = (id: PadId) => {
+    const handlePress = () => {
         setIsPressed(true);
-        props.onPress(id);
+        props.onPress(props.data.id);
         setTimeout(() => setIsPressed(false), 500);
     }
 
     return (
-        <Pressable style={[styles.pad, {borderColor: isPressed ? "#FFFFFF" : props.data.color}]} onPress={() => handlePress(1)}>
+        <Pressable 
+            style={isPressed ? 
+                [styles.pad, {borderColor: 'white'}] : 
+                [styles.pad, {borderColor: props.data.color === "none" ? "grey" : props.data.color}]} 
+            onPress={() => handlePress()}>
             <PadGradient color={props.data.color}>
                 <Image
                   source={padIcon} 
@@ -29,8 +33,8 @@ const OptionsPad = (props: OptionsPadProps) => {
                   style={{width: 20, height: 20}}
                 />
                 <Text style={{color: props.data.color === "none" ? "black" : "white"}}>{props.data.name}</Text>
-                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 10}}>{props.data.assignTo}</Text>
-                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 10}}>mode {props.data.mode}</Text>
+                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 10}}>{props.data.mode} : </Text>
+                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 8}}>{props.data.assignTo}</Text>
             </PadGradient>
         </Pressable>
     )

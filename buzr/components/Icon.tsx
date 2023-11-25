@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState, useEffect, memo} from "react";
 import { Image, ImageURISource } from "react-native";
 import { PadIcon} from "../types";
 const none = require("../assets/images/padIcons/none.png");
@@ -48,4 +48,4 @@ const Icon = (props: IconProps) => {
     )
 }
 
-export default Icon;
+export default memo(Icon);

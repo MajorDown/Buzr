@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, PropsWithChildren } from "react";
+import { createContext, useContext, useState, PropsWithChildren, useMemo } from "react";
 import { Pads, PadsContext } from "../types";
 import padsData from "../padsData";
 
@@ -9,15 +9,15 @@ export function usePadsContext() {
   return context;
 }
 
-// Utilisation de React.memo ici
 export const PadsProvider = (props: PropsWithChildren) => {
   const [pads, setPads] = useState<Pads>(padsData);
-  const updatePads = (newPads: Pads) => {
-    setPads(newPads);
-  };
+
+  const contextValue = useMemo(() => {
+    return { pads, updatePads: setPads };
+  }, [pads]);
 
   return (
-    <AllPadsContext.Provider value={{ pads, updatePads }}>
+    <AllPadsContext.Provider value={contextValue}>
       {props.children}
     </AllPadsContext.Provider>
   );

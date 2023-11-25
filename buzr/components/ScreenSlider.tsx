@@ -1,18 +1,16 @@
-import { useEffect, useRef, PropsWithChildren } from "react";
+import { useEffect, useRef, PropsWithChildren, memo } from "react";
 import { Animated, Easing } from "react-native";
 import styles from "../styles/styles";
-import { AppScreen } from "../types";
+import { useScreenContext } from "../contexts/ScreenContext";
 
-type ScreenSliderProps = PropsWithChildren<{
-  selectedScreen: AppScreen;
-}>;
 
-const ScreenSlider = (props: ScreenSliderProps) => {
+const ScreenSlider = (props: PropsWithChildren) => {
+  const {screen, updateScreen} = useScreenContext();
   const slideAnimation = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     let toValue;
-    switch (props.selectedScreen) {
+    switch (screen) {
       case "play":
         toValue = 0;
         break;
@@ -32,7 +30,7 @@ const ScreenSlider = (props: ScreenSliderProps) => {
       easing: Easing.ease,
       useNativeDriver: false,
     }).start();
-  }, [props.selectedScreen]);
+  }, [screen]);
 
   return (
     <Animated.View
@@ -50,6 +48,6 @@ const ScreenSlider = (props: ScreenSliderProps) => {
   );
 };
 
-export default ScreenSlider;
+export default memo(ScreenSlider);
 
 

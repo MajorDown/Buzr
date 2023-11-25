@@ -11,7 +11,7 @@ const optionsImage = require("../assets/images/options.png");
 const MenuSelector = () => {
     const {screen, updateScreen}:AppScreenContext = useScreenContext();
     const [isPressed, setIsPressed] = useState<boolean>(false);
-        
+    
         const handlePress = () => {
             setIsPressed(true);
             switch (screen) {
