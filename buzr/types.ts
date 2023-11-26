@@ -5,6 +5,11 @@ export type AppScreenContext = {
 };
 
 export type PadId = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 ;
+export type ConfigContext = {
+    idToConfig: PadId;
+    updateIdToConfig: (newId: PadId) => void
+}
+
 export type PadName = string | null;
 export type PadAssignment = string | null;
 export type PadColor = "none" | "red" | "orange" | "yellow" | "green" | "turkish" | "blue" | "purple" | "pink";

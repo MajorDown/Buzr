@@ -17,9 +17,6 @@ const ScreenSlider = (props: PropsWithChildren) => {
       case "options":
         toValue = 1;
         break;
-      case "config":
-        toValue = 2;
-        break;
       default:
         toValue = 0;
     }
@@ -37,8 +34,8 @@ const ScreenSlider = (props: PropsWithChildren) => {
       style={[
         styles.screenSlider,{
           left: slideAnimation.interpolate({
-            inputRange: [0, 1, 2],
-            outputRange: ["0%", "-100%", "-200%"],
+            inputRange: [0, 1],
+            outputRange: ["0%", "-100%"],
           }),
         },
       ]}

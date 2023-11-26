@@ -90,6 +90,27 @@ const styles = StyleSheet.create({
     height: "100%",
     justifyContent: "center",
     alignItems: "center",
+  },
+  configModal : {
+    backgroundColor: "#ffffff",
+    margin: "2%",
+    padding: "2%"
+  },
+  configModalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  configModalTitle: {
+    textAlign: "center" 
+  },
+  configModalClose : {
+    width: 30,
+    height: 30,
+    backgroundColor: "#cccccc",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 5
   }
 });
 
