@@ -4,16 +4,21 @@ import styles from "../styles/styles";
 import OptionsPad from "./OptionsPad";
 import { PadId } from "../types";
 import { usePadsContext } from "../contexts/PadsContext";
+import { useConfigIdContext } from "../contexts/ConfigIdContext";
+import { useOpenConfigContext } from "../contexts/OpenConfigContext";
 
 type OptionsScreenProps = {
     style?: StyleProp<ViewStyle>;
 }
 
 const OptionsScreen = (props: OptionsScreenProps) => {
+    const {idToConfig, updateIdToConfig} = useConfigIdContext();
+    const {openConfig, updateOpenConfig} = useOpenConfigContext();
     const {pads, updatePads} = usePadsContext();
 
     const goToConfig = (id: PadId) => {
-        console.log("goToConfig");
+        updateIdToConfig(id);
+        updateOpenConfig(true);
     };
 
     return (

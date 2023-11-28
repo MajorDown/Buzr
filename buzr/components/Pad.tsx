@@ -28,7 +28,7 @@ const Pad = (props: PadData) => {
         case "green" :
           setBorderColor("#45874C");
           break;
-        case "turkish" :
+        case "turquoise" :
           setBorderColor("#458783");
           break;
         case "blue" :

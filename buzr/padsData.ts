@@ -6,7 +6,7 @@ const padsData: Pads = {
         "name": "pad1",
         "color": "none",
         "icon": "none",
-        "assignTo": "music1.mp3",
+        "assignTo": {name: "kikou.mp3", uri: ""},
         "mode": "sequence"
     },
     "pad2": {
@@ -14,7 +14,7 @@ const padsData: Pads = {
         "name": "pad2",
         "color": "none",
         "icon": "none",
-        "assignTo": "music2.mp3",
+        "assignTo": {name: "lolilol.mp3", uri: ""},
         "mode": "sequence"
     },
     "pad3": {
@@ -22,7 +22,7 @@ const padsData: Pads = {
         "name": "pad3",
         "color": "none",
         "icon": "none",
-        "assignTo": "music3.mp3",
+        "assignTo": {name: "mdr.mp3", uri: ""},
         "mode": "sequence"
     },
     "pad4": {
@@ -30,7 +30,7 @@ const padsData: Pads = {
         "name": "pad4",
         "color": "none",
         "icon": "none",
-        "assignTo": "music4.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad5": {
@@ -38,7 +38,7 @@ const padsData: Pads = {
         "name": "pad5",
         "color": "none",
         "icon": "none",
-        "assignTo": "music5.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad6": {
@@ -46,7 +46,7 @@ const padsData: Pads = {
         "name": "pad6",
         "color": "none",
         "icon": "none",
-        "assignTo": "music6.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad7": {
@@ -54,7 +54,7 @@ const padsData: Pads = {
         "name": "pad7",
         "color": "none",
         "icon": "none",
-        "assignTo": "music7.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad8": {
@@ -62,7 +62,7 @@ const padsData: Pads = {
         "name": "pad8",
         "color": "none",
         "icon": "none",
-        "assignTo": "music8.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad9": {
@@ -70,7 +70,7 @@ const padsData: Pads = {
         "name": "pad9",
         "color": "none",
         "icon": "none",
-        "assignTo": "music9.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad10": {
@@ -78,7 +78,7 @@ const padsData: Pads = {
         "name": "pad10",
         "color": "none",
         "icon": "none",
-        "assignTo": "music10.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad11": {
@@ -86,7 +86,7 @@ const padsData: Pads = {
         "name": "pad11",
         "color": "none",
         "icon": "none",
-        "assignTo": "music11.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad12": {
@@ -94,7 +94,7 @@ const padsData: Pads = {
         "name": "pad12",
         "color": "none",
         "icon": "none",
-        "assignTo": "music12.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad13": {
@@ -102,7 +102,7 @@ const padsData: Pads = {
         "name": "pad13",
         "color": "none",
         "icon": "none",
-        "assignTo": "music13.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad14": {
@@ -110,7 +110,7 @@ const padsData: Pads = {
         "name": "pad14",
         "color": "none",
         "icon": "none",
-        "assignTo": "music14.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     },
     "pad15": {
@@ -118,7 +118,7 @@ const padsData: Pads = {
         "name": "pad15",
         "color": "none",
         "icon": "none",
-        "assignTo": "music15.mp3",
+        "assignTo": {name: "", uri: ""},
         "mode": "sequence"
     }
 }

@@ -92,9 +92,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   configModal : {
-    backgroundColor: "#ffffff",
-    margin: "2%",
-    padding: "2%"
+    backgroundColor: "#eeeeee",
+    margin: "3%",
+    padding: "2%",
+    borderRadius: 10
   },
   configModalHeader: {
     flexDirection: "row",
@@ -102,7 +103,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   configModalTitle: {
-    textAlign: "center" 
+     
   },
   configModalClose : {
     width: 30,
@@ -111,6 +112,60 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 5
+  },
+  configPanel : {
+    marginTop: "2%",
+    width: "80%",
+    marginLeft: "10%",
+    gap: 5
+  },
+  configPanelRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center"
+  },
+  configTextInput: {
+    padding: 2,
+    width: "40%", 
+    height: 30,
+    textAlign: "center", 
+    alignItems: "center",
+    borderRadius: 5,
+    borderWidth: 2,
+    borderColor: "#cccccc"
+  },
+  configDropdown: {
+    width: "40%", 
+    borderRadius: 5, 
+    borderWidth: 2, 
+    borderColor: "#cccccc", 
+    paddingLeft: "5%"
+  },
+  configIconSelector : {
+    flexDirection: "row",
+    gap: 20
+  },
+  configIconSelectorPressable : {
+    width: 32,
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#cccccc",
+    borderRadius: 5,
+    borderWidth: 2
+  },
+  configIconSelectorImage : {
+    width: "80%",
+    height: "80%"
+  },
+  configAudioSelectorBtn: {
+    width: "40%",
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#cccccc",
+    borderRadius: 5,
+    borderWidth: 2
   }
 });
 

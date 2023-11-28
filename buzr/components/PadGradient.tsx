@@ -35,7 +35,7 @@ const PadGradient = (props: PadGradientProps) => {
           case "green" :
             setGradientColors(greenGradient);
             break;
-          case "turkish" :
+          case "turquoise" :
             setGradientColors(turkishGradient);
             break;
           case "blue" :

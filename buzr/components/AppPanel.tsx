@@ -5,34 +5,26 @@ import PlayScreen from './PlayScreen';
 import OptionsScreen from './OptionsScreen';
 import ScreenSlider from './ScreenSlider';
 import { PadsProvider } from "../contexts/PadsContext";
-import { ConfigIdProvider, useConfigContext } from '../contexts/ConfigContext';
+import { useOpenConfigContext } from "../contexts/OpenConfigContext";
 import ConfigModal from './ConfigModal';
+import { useConfigIdContext } from "../contexts/ConfigIdContext";
+import ConfigPanel from "./ConfigPanel";
 
 const AppPanel = () => {
-  const {idToConfig, updateIdToConfig} = useConfigContext();
-  const [openConfig, setOpenConfig] = useState<boolean>(false);
-
-    // Utiliser useEffect pour surveiller les changements dans le contexte
-    useEffect(() => {
-      if (idToConfig) {
-        // Si le contexte a été modifié, montrer la modal
-        setOpenConfig(true);
-      }
-    }, [idToConfig]);
+  const {openConfig, updateOpenConfig} = useOpenConfigContext();
+  const {idToConfig, updateIdToConfig} = useConfigIdContext();
 
   return (
     <View style={styles.appPanel}>
-      <ConfigIdProvider>
         <PadsProvider>
           <ScreenSlider>
             <PlayScreen />
             <OptionsScreen />
           </ScreenSlider>
             {openConfig && <ConfigModal>
-            <Text style={styles.configModal}>kikou</Text>
-          </ConfigModal>}
+              <ConfigPanel />
+            </ConfigModal>}
         </PadsProvider>
-      </ConfigIdProvider>
     </View>
   );
 };

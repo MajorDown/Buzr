@@ -34,7 +34,7 @@ const OptionsPad = (props: OptionsPadProps) => {
                 />
                 <Text style={{color: props.data.color === "none" ? "black" : "white"}}>{props.data.name}</Text>
                 <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 10}}>{props.data.mode} : </Text>
-                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 8}}>{props.data.assignTo}</Text>
+                <Text style={{color: props.data.color === "none" ? "black" : "white", fontSize: 8}}>{props.data.assignTo.name}</Text>
             </PadGradient>
         </Pressable>
     )

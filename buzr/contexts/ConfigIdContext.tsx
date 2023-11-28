@@ -3,7 +3,7 @@ import { PadId, ConfigContext } from "../types";
 
 const ConfigIdContext = createContext({} as ConfigContext);
 
-export function useConfigContext() {
+export function useConfigIdContext() {
   const context = useContext(ConfigIdContext);
   return context;
 }

@@ -1,14 +1,17 @@
 import {useState, PropsWithChildren} from "react";
 import {Modal, View, Pressable, Text} from "react-native";
-import { useConfigContext } from "../contexts/ConfigContext";
+import { useConfigIdContext } from "../contexts/ConfigIdContext";
+import { useOpenConfigContext } from "../contexts/OpenConfigContext";
 import styles from "../styles/styles";
 
 const ConfigModal = (props : PropsWithChildren) => {
-    const {idToConfig, updateIdToConfig} = useConfigContext();
+    const {idToConfig, updateIdToConfig} = useConfigIdContext();
+    const {openConfig, updateOpenConfig} = useOpenConfigContext();
     const [isOpen, setIsOpen] = useState<boolean>(true);
 
     const hideModal = () => {
         setIsOpen(false)
+        updateOpenConfig(false);        
     }
 
     return (
