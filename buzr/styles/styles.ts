@@ -114,10 +114,9 @@ const styles = StyleSheet.create({
     borderRadius: 5
   },
   configPanel : {
-    marginTop: "2%",
     width: "80%",
     marginLeft: "10%",
-    gap: 5
+    gap: 8
   },
   configPanelRow: {
     flexDirection: "row",
@@ -159,6 +158,16 @@ const styles = StyleSheet.create({
     height: "80%"
   },
   configAudioSelectorBtn: {
+    width: "40%",
+    height: 32,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#cccccc",
+    borderRadius: 5,
+    borderWidth: 2
+  },
+  configValidation: {
+    marginHorizontal: "30%",
     width: "40%",
     height: 32,
     justifyContent: "center",

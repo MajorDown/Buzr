@@ -1,18 +1,21 @@
 import {useState} from "react";
-import {View, Text, TextInput} from "react-native";
+import {View, Text, TextInput, Pressable} from "react-native";
 import {Dropdown} from "react-native-element-dropdown";
 import styles from "../styles/styles";
 import IconSelector from "./IconSelector";
 import AudioSelector from "./AudioSelector";
-import {PadName, PadAssignment, PadColor, PadIcon, PadMode} from "../types";
+import {PadName, PadAssignment, PadColor, PadIcon, PadMode, Pads} from "../types";
 import { usePadsContext } from "../contexts/PadsContext";
 import { useConfigIdContext } from "../contexts/ConfigIdContext";
+import { useOpenConfigContext } from "../contexts/OpenConfigContext";
+import StorageManager from "../tools/storageManager";
 
 type ColorDropdown = {label: PadColor, value: PadColor}
 
 type ModeDropsDown = {label: PadMode, value: PadMode}
 
 const ConfigPanel = () => {
+    const {openConfig, updateOpenConfig} = useOpenConfigContext();
     const {pads, updatePads} = usePadsContext();
     const {idToConfig, updateIdToConfig} = useConfigIdContext();
     const selectedPad = pads[`pad${idToConfig}`];
@@ -41,6 +44,29 @@ const ConfigPanel = () => {
         {label: "sequence", value: "sequence"},
         {label: "loop", value: "loop"}
     ]
+
+    const SaveConfig = () => {
+        let newPads : Pads = pads ;
+        newPads[`pad${idToConfig}`] = {
+            "id": idToConfig,
+            "name": panelName,
+            "color": panelColor,
+            "icon": panelIcon,
+            "assignTo": panelAssignment,
+            "mode": panelMode
+        }
+        StorageManager.save("buzr_pads", newPads)
+        .then(result => {
+            if (result.status === 'success') console.log("Données sauvegardées avec succès");
+            else console.error("Erreur lors de la sauvegarde des données");
+        })
+        .catch(error => {
+            console.error("Une erreur inattendue s'est produite :", error);
+        });
+        updatePads(newPads);
+        updateOpenConfig(false);
+    
+    }
 
     return (
         <View style={styles.configPanel}>
@@ -88,6 +114,9 @@ const ConfigPanel = () => {
                 <Text>{panelAssignment.name}</Text>
                 <AudioSelector selectedFile={(data) => setPanelAssignment(data)}/>
             </View>
+            <Pressable style={styles.configValidation} onPress={() => SaveConfig()}>
+                <Text>Valider la configuration</Text>
+            </Pressable>
         </View>
     )
 }

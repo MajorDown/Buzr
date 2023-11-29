@@ -24,7 +24,7 @@ export type PadIcon = "none" | "music" | "perc" | "synth" | "instrument" | "voca
 export type PadMode = "loop" | "sequence";
 export type PadProps = {
     id: PadId;
-    name: string | null;
+    name: PadName;
     assignTo: PadAssignment;
     color: PadColor;
     icon: PadIcon;

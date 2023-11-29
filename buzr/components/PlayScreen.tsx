@@ -1,4 +1,4 @@
-import {memo} from "react";
+import {useEffect, memo} from "react";
 import {View, StyleProp, ViewStyle} from "react-native";
 import styles from "../styles/styles";
 import Pad from "./Pad";
@@ -9,7 +9,7 @@ type PlayScreenProps = {
 }
 
 const PlayScreen = (props: PlayScreenProps) => {
-    const {pads, updatePads} = usePadsContext();
+    const {pads, updatePads} = usePadsContext();    
 
     return (
         <View style={[styles.screen, styles.playScreen, props.style]}>
@@ -38,4 +38,4 @@ const PlayScreen = (props: PlayScreenProps) => {
     )
 }
 
-export default memo(PlayScreen);
+export default PlayScreen;
