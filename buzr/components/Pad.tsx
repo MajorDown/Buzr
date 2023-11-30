@@ -1,15 +1,17 @@
 import { useState, useEffect, memo} from "react";
 import { Pressable, Text } from "react-native";
-import { PadProps } from "../types";
+import { PadAssignment, PadProps } from "../types";
 import styles from "../styles/styles";
 import PadGradient from "./PadGradient";
 import Icon from "./Icon";
+import { Audio } from 'expo-av';
 
 type PadData = { data: PadProps}
 
 const Pad = (props: PadData) => {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [borderColor, setBorderColor] = useState<string>("#8D8D8D");
+    const [sound, setSound] = useState<Audio.Sound | undefined>();
 
     useEffect(() => {
       switch (props.data.color) {
@@ -43,11 +45,36 @@ const Pad = (props: PadData) => {
       }
     }, [props.data.color])
 
+    async function loadSound() {
+      console.log("Chargement de l'audio");
+      if (props.data.assignTo && props.data.assignTo.uri) {
+        console.log(props.data.assignTo.uri);
+        const {sound} = await Audio.Sound.createAsync({uri: props.data.assignTo.uri}, {shouldPlay: true});
+        console.log(sound);
+        setSound(sound);
+      } else {
+        setSound(undefined);
+      }
+    }
+
+    async function playSound() { 
+      console.log('Playing Audio');
+      if (sound) await sound.playAsync();
+    }
+
+    async function stopSound() {
+      console.log("fermage de gueule");
+      if (sound) await sound.stopAsync();
+
+    }
+
     const handlePress = () => {
       if (isActive === false) {
         setIsActive(true);
-        setTimeout(() => setIsActive(false), 500);
+        loadSound();
+        // setTimeout(() => setIsActive(false), 500);
       } else if (isActive === true) {
+        stopSound();
         setIsActive(false);
       }
     }
