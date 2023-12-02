@@ -94,7 +94,7 @@ const ConfigPanel = () => {
             </View>
             <View style={styles.configPanelRow}>
                 <Text>icône :</Text>
-                <IconSelector initialIcon={"none"} onIconChange={setPanelIcon}/>
+                <IconSelector initialIcon={pads[`pad${idToConfig}`].icon} onIconChange={setPanelIcon}/>
             </View>
             <View style={styles.configPanelRow}>
                 <Text>mode :</Text>
